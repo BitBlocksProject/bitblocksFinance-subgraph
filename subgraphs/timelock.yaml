@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: PancakeSwap Timelock contract
-repository: https://github.com/pancakeswap
+description: BitBlocksDEX Timelock contract
+repository: https://github.com/bitblocksdex
 schema:
   file: ./timelock.graphql
 dataSources:
