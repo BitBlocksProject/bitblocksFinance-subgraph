@@ -20,7 +20,7 @@
     "build:trading": "graph build subgraphs/trading.yaml",
     "deploy:blocks": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/blocks subgraphs/blocks.yaml",
     "deploy:dexcandles": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/dex-candles subgraphs/dexcandles.yaml",
-    "deploy:exchange": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/dexexchange subgraphs/exchange.yaml",
+    "deploy:exchange": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Dexexchange subgraphs/exchange.yaml",
     "deploy:profile": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/profile subgraphs/profile.yaml",
     "deploy:timelock": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/timelock subgraphs/timelock.yaml",
     "deploy:trading": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/trading-competition-v1 subgraphs/trading.yaml",
