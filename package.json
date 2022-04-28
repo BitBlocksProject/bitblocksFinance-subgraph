@@ -18,7 +18,7 @@
     "build:profile": "graph build subgraphs/profile.yaml",
     "build:timelock": "graph build subgraphs/timelock.yaml",
     "build:trading": "graph build subgraphs/trading.yaml",
-    "deploy:blocks": "graph deploy --access-token '5d340217c349425d8a4b862d029bef2c' --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Dexblocks subgraphs/blocks.yaml",
+    "deploy:blocks": "graph deploy --access-token '5d340217c349425d8a4b862d029bef2c' --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Betablocks subgraphs/blocks.yaml",
     "deploy:dexcandles": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/dex-candles subgraphs/dexcandles.yaml",
     "deploy:exchange": "graph deploy --access-token '5d340217c349425d8a4b862d029bef2c' --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Betaexchange subgraphs/exchange.yaml",
     "deploy:profile": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/profile subgraphs/profile.yaml",
