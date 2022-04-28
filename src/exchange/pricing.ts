@@ -4,9 +4,9 @@ import { Pair, Token, Bundle } from "../../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 
 const WBNB_ADDRESS = "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c";
-const WBNB_BUSD_PAIR = "0x7197a1326d627c975959a8b5a51478749D09bD32"; // created block 589414
-const DAI_WBNB_PAIR = "0xD1e42B1db405BB87923c95335feB5caaC801b7a6"; // created block 481116
-const USDT_WBNB_PAIR = "0x239D4fF510C42d1715c5D9C3D4a2B83584ED572c"; // created block 648115
+const WBNB_BUSD_PAIR = "0x7197a1326d627c975959a8b5a51478749D09bD32"; 
+const DAI_WBNB_PAIR = "0xD1e42B1db405BB87923c95335feB5caaC801b7a6"; 
+const USDT_WBNB_PAIR = "0x239D4fF510C42d1715c5D9C3D4a2B83584ED572c"; 
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch bnb prices for each stablecoin
@@ -49,10 +49,11 @@ let WHITELIST: string[] = [
   "0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3", // DAI
   "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
   "0x2170ed0880ac9a755fd29b2688956bd959f933f8", // WETH
+  "0xfC8E68E30350c6603D3d29fCc8E676380C28FCf4", // BBKFI
 ];
 
 // minimum liquidity for price to get tracked
-let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("5");
+let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("0");
 
 /**
  * Search through graph to find derived BNB per token.
