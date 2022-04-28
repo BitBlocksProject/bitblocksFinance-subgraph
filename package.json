@@ -1,49 +1,34 @@
 {
-  "name": "bitblocks-subgraph",
-  "description": "BitBlocksDEX Subgraph",
-  "version": "1.0.0",
+  "name": "BitBlocksFinance-subgraph",
+  "description": "BitBlocksFinance Subgraph",
+  "version": "2.0.0",
+  "private": true,
   "repository": "git@github.com:BitBlocksProject/bitblocks-subgraph.git",
-  "author": "BitBlocksDEX",
+  "author": "BitBlocksproject",
   "license": "MIT",
+  "workspaces": [
+    "subgraphs/*"
+  ],
   "scripts": {
-    "codegen:blocks": "graph codegen subgraphs/blocks.yaml",
-    "codegen:dexcandles": "graph codegen subgraphs/dexcandles.yaml",
-    "codegen:exchange": "graph codegen subgraphs/exchange.yaml",
-    "codegen:profile": "graph codegen subgraphs/profile.yaml",
-    "codegen:timelock": "graph codegen subgraphs/timelock.yaml",
-    "codegen:trading": "graph codegen subgraphs/trading.yaml",
-    "build:blocks": "graph build subgraphs/blocks.yaml",
-    "build:dexcandles": "graph build subgraphs/dexcandles.yaml",
-    "build:exchange": "graph build subgraphs/exchange.yaml",
-    "build:profile": "graph build subgraphs/profile.yaml",
-    "build:timelock": "graph build subgraphs/timelock.yaml",
-    "build:trading": "graph build subgraphs/trading.yaml",
-    "deploy:blocks": "graph deploy --access-token '5d340217c349425d8a4b862d029bef2c' --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Betablocks subgraphs/blocks.yaml",
-    "deploy:dexcandles": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/dex-candles subgraphs/dexcandles.yaml",
-    "deploy:exchange": "graph deploy --access-token '5d340217c349425d8a4b862d029bef2c' --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/Betaexchange subgraphs/exchange.yaml",
-    "deploy:profile": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/profile subgraphs/profile.yaml",
-    "deploy:timelock": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/timelock subgraphs/timelock.yaml",
-    "deploy:trading": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksdex/trading-competition-v1 subgraphs/trading.yaml",
-    "format": "prettier --write '*/**/*.{js,ts}'",
-    "lint": "eslint '*/**/*.{js,ts}'"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn format",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "codegen": "lerna run codegen",
+    "build": "lerna run build",
+    "format:check": "prettier --check '*/**/*.{js,ts}'",
+    "format:write": "prettier --write '*/**/*.{js,ts}'",
+    "lint": "eslint '*/**/*.{js,ts}'",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
-    "@graphprotocol/graph-cli": "^0.20.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@graphprotocol/graph-cli": "^0.21.0",
     "@graphprotocol/graph-ts": "^0.20.0",
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
-    "eslint": "^7.20.0",
-    "eslint-config-prettier": "^7.2.0",
-    "husky": "^4.3.8",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.2"
+    "@typescript-eslint/eslint-plugin": "^4.29.0",
+    "@typescript-eslint/parser": "^4.29.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   }
 }
