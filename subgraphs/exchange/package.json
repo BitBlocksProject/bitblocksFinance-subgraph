@@ -1,13 +1,13 @@
 {
   "name": "exchange",
-  "description": "PancakeSwap Subgraph",
+  "description": "BitBlocksFinance Subgraph",
   "version": "1.0.0",
-  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
-  "author": "PancakeSwap",
+  "repository": "git@github.com:BitBlocksProject/bitblocks-subgraph.git",
+  "author": "BitBlocksFinance",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
     "build": "graph build subgraph.yaml",
-    "deploy": "graph deploy --product hosted-service --access-token '5d340217c349425d8a4b862d029bef2c' --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/exchangebbkdex subgraph.yaml"
+    "deploy": "graph deploy --product hosted-service --access-token '5d340217c349425d8a4b862d029bef2c' --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ bitblocksproject/bbkexchangedex subgraph.yaml"
   }
 }

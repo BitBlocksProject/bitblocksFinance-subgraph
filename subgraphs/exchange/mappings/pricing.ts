@@ -35,7 +35,8 @@ let WHITELIST: string[] = [
   "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", // WBNB
   "0xe9e7cea3dedca5984780bafc599bd69add087d56", // BUSD
   "0x55d398326f99059ff775485246999027b3197955", // USDT
-  "0xfC8E68E30350c6603D3d29fCc8E676380C28FCf4", // BBKFI
+  "0xfc8e68e30350c6603d3d29fcc8e676380c28fcf4", // BBKFI
+  "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
 ];
 
 // minimum liquidity for price to get tracked
