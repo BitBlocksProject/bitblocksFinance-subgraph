@@ -3,28 +3,14 @@ import { BigDecimal, Address } from "@graphprotocol/graph-ts/index";
 import { Pair, Token, Bundle } from "../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 
-let WBNB_ADDRESS = "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c";
-let BUSD_WBNB_PAIR = "0x7197a1326d627c975959a8b5a51478749d09bd32";
-let USDT_WBNB_PAIR = "0x239d4ff510c42d1715c5d9c3d4a2b83584ed572c"; 
+const WMATIC_ADDRESS = "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270";
+const USDC_WMATIC_PAIR = "0xf4B715be7983c2E949f397d53F1A435868A9f25A";
 
 export function getBnbPriceInUSD(): BigDecimal {
-  // fetch eth prices for each stablecoin
-  let usdtPair = Pair.load(USDT_WBNB_PAIR); // usdt is token0
-  let busdPair = Pair.load(BUSD_WBNB_PAIR); // busd is token1
+  let usdcPair = Pair.load(USDC_WMATIC_PAIR); // usdt is token1
 
-  if (busdPair !== null && usdtPair !== null) {
-    let totalLiquidityBNB = busdPair.reserve0.plus(usdtPair.reserve1);
-    if (totalLiquidityBNB.notEqual(ZERO_BD)) {
-      let busdWeight = busdPair.reserve0.div(totalLiquidityBNB);
-      let usdtWeight = usdtPair.reserve1.div(totalLiquidityBNB);
-      return busdPair.token1Price.times(busdWeight).plus(usdtPair.token0Price.times(usdtWeight));
-    } else {
-      return ZERO_BD;
-    }
-  } else if (busdPair !== null) {
-    return busdPair.token1Price;
-  } else if (usdtPair !== null) {
-    return usdtPair.token0Price;
+  if (usdcPair !== null) {
+    return usdcPair.token1Price;
   } else {
     return ZERO_BD;
   }
@@ -32,11 +18,9 @@ export function getBnbPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c", // WBNB
-  "0xe9e7cea3dedca5984780bafc599bd69add087d56", // BUSD
-  "0x55d398326f99059ff775485246999027b3197955", // USDT
-  "0xfc8e68e30350c6603d3d29fcc8e676380c28fcf4", // BBKFI
-  "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", // BTCB
+  "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270", // WMATIC
+  "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", // USDC
+  "0xCb9C119d5520A7165F234759578E01F095Aa33C1" // BBKFI
 ];
 
 // minimum liquidity for price to get tracked
@@ -47,7 +31,7 @@ let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("1");
  * @todo update to be derived BNB (add stablecoin estimates)
  **/
 export function findBnbPerToken(token: Token): BigDecimal {
-  if (token.id == WBNB_ADDRESS) {
+  if (token.id == WMATIC_ADDRESS) {
     return ONE_BD;
   }
   // loop through whitelist and check if paired with any
