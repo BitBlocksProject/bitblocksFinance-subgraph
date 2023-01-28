@@ -10,7 +10,7 @@ export function getBnbPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(USDC_WMATIC_PAIR); // usdt is token1
 
   if (usdcPair !== null) {
-    return usdcPair.token1Price;
+    return usdcPair.token0Price;
   } else {
     return ZERO_BD;
   }
