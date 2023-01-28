@@ -1,9 +1,9 @@
 {
   "name": "pairs",
-  "description": "PancakeSwap Subgraph",
+  "description": "BitBlocksfinance Subgraph",
   "version": "1.0.0",
-  "repository": "git@github.com:pancakeswap/pancake-subgraph.git",
-  "author": "PancakeSwap",
+  "repository": "git@github.com:BitBlocksProject/bitblocksFinance-subgraph.git",
+  "author": "BitBlocks",
   "license": "MIT",
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
