@@ -3,8 +3,8 @@ import { BigDecimal, Address } from "@graphprotocol/graph-ts/index";
 import { Pair, Token, Bundle } from "../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 
-const WMATIC_ADDRESS = "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270";
-const USDC_WMATIC_PAIR = "0xf4B715be7983c2E949f397d53F1A435868A9f25A";
+const WMATIC_ADDRESS = "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270";
+const USDC_WMATIC_PAIR = "0xf4b715be7983c2e949f397d53f1a435868a9f25a";
 
 export function getBnbPriceInUSD(): BigDecimal {
   let usdcPair = Pair.load(USDC_WMATIC_PAIR); // usdt is token1
@@ -18,9 +18,9 @@ export function getBnbPriceInUSD(): BigDecimal {
 
 // token where amounts should contribute to tracked volume and liquidity
 let WHITELIST: string[] = [
-  "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270", // WMATIC
-  "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", // USDC
-  "0xCb9C119d5520A7165F234759578E01F095Aa33C1" // BBKFI
+  "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270", // WMATIC
+  "0x2791bca1f2de4661ed88a30c99a7a9449aa84174", // USDC
+  "0xcb9c119d5520a7165f234759578e01f095aa33c1" // BBKFI
 ];
 
 // minimum liquidity for price to get tracked
